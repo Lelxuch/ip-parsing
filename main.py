@@ -1,5 +1,3 @@
-# 203.206.46.58
-
 def binaryToDecimal(binaryAddress):
   decimalAddress = ""
   for index, i in enumerate(binaryAddress.split('.')):
@@ -19,7 +17,6 @@ for i in range(0, len(splittedAddress)):
   binaryAddressStr += str(format(int(splittedAddress[i]), '#010b'))[2:]
   if i != 3:
     binaryAddressStr += '.'
-  
 
 binaryMask = []
 binaryMaskStr = ""
@@ -41,7 +38,6 @@ binaryRootAddressStr = ""
 binaryRootAddressItem = ""
 for i in range(0, 4):
   for j in range(0, 8):
-    # print(binaryAddress[i][j], binaryMask[i][j])
     if binaryAddress[i][j] == binaryMask[i][j] and binaryAddress[i][j] == '1':
       binaryRootAddressItem += '1'
     else:
