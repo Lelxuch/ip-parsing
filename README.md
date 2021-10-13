@@ -1,7 +1,5 @@
 # ip-parsing
 
-Title: Ip parsing
-
 Student: Sanzhar Nakyp
 
 This program splits ip into first, last and broadcast addresses
@@ -41,4 +39,19 @@ Output:
 First address: 11001011.11001110.00101110.00000001 => 203.206.46.1
 Last address: 11001011.11001110.00101111.11111110 => 203.206.47.254
 Broadcast address: 11001011.11001110.00101111.11111111 => 203.206.47.255
+```
+
+### 3rd example
+
+```
+>>> Enter ip address: 221.75.50.14
+>>> Enter mask: 18
+```
+
+Output:
+
+```
+First address: 11011101.01001011.00000000.00000001 => 221.75.0.1
+Last address: 11011101.01001011.00111111.11111110 => 221.75.63.254
+Broadcast address: 11011101.01001011.00111111.11111111 => 221.75.63.255
 ```
