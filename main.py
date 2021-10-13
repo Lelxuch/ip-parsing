@@ -1,5 +1,3 @@
-# 203.206.46.58
-
 def binaryToDecimal(binaryAddress):
   decimalAddress = ""
   for index, i in enumerate(binaryAddress.split('.')):
