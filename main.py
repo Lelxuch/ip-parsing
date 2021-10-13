@@ -1,3 +1,5 @@
+# 203.206.46.58
+
 def binaryToDecimal(binaryAddress):
   decimalAddress = ""
   for index, i in enumerate(binaryAddress.split('.')):
@@ -8,24 +10,34 @@ def binaryToDecimal(binaryAddress):
 
 ip = input("Enter ip address: ")
 mask = int(input("Enter mask: "))
+
 splittedAddress = ip.split('.')
 binaryAddress = []
-binaryMask = []
+binaryAddressStr = ""
+for i in range(0, len(splittedAddress)):
+  binaryAddress.append(str(format(int(splittedAddress[i]), '#010b'))[2:])
+  binaryAddressStr += str(format(int(splittedAddress[i]), '#010b'))[2:]
+  if i != 3:
+    binaryAddressStr += '.'
+  
 
+binaryMask = []
+binaryMaskStr = ""
 binaryMaskItem = ""
 for i in range(1, 33):
   if i <= mask:
     binaryMaskItem += "1"
   else: 
     binaryMaskItem += "0"
-  if(i % 8 == 0):
+  if i % 8 == 0:
     binaryMask.append(binaryMaskItem)
+    binaryMaskStr += binaryMaskItem
     binaryMaskItem = ""
-
-for i in splittedAddress:
-  binaryAddress.append(str(format(int(i), '#010b'))[2:])
+    if i != 32:
+      binaryMaskStr += '.'
 
 binaryRootAddress = []
+binaryRootAddressStr = ""
 binaryRootAddressItem = ""
 for i in range(0, 4):
   for j in range(0, 8):
@@ -35,7 +47,10 @@ for i in range(0, 4):
     else:
       binaryRootAddressItem += '0'
   binaryRootAddress.append(binaryRootAddressItem)
+  binaryRootAddressStr += binaryRootAddressItem
   binaryRootAddressItem = ""
+  if i != 3:
+    binaryRootAddressStr += '.'
 
 binaryFirstAddress = ""
 for i in range(0, 4):
@@ -77,6 +92,9 @@ for i in range(0, 4):
     binaryBroadcastAddress += '.'
 broadcastAddress = binaryToDecimal(binaryBroadcastAddress)
 
+print("Binary address: " + binaryAddressStr)
+print("Binary mask: " + binaryMaskStr)
+print("Binary root address: " + binaryRootAddressStr)
 print("First address: " + binaryFirstAddress + " => " + firstAddress)
 print("Last address: " + binaryLastAddress + " => " + lastAddress)
 print("Broadcast address: " + binaryBroadcastAddress + " => " + broadcastAddress)
