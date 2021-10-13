@@ -13,6 +13,8 @@ python3 main.py
 ## Examples
 ### 1st example
 
+Input:
+
 ```
 >>> Enter ip address: 1.53.165.233
 >>> Enter mask: 23
@@ -28,6 +30,8 @@ Broadcast address: 00000001.00110101.10100101.11111111 => 1.53.165.255
 
 ### 2nd example
 
+Input:
+
 ```
 >>> Enter ip address: 203.206.46.58
 >>> Enter mask: 23
@@ -42,6 +46,8 @@ Broadcast address: 11001011.11001110.00101111.11111111 => 203.206.47.255
 ```
 
 ### 3rd example
+
+Input:
 
 ```
 >>> Enter ip address: 221.75.50.14
